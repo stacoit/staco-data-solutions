@@ -148,7 +148,7 @@ export const useGSAPAnimation = () => {
 };
 
 // Smoother parallax effect
-export const useParallaxAnimation = (selector: string) => {
+export const useParallaxAnimation = (selector: string, speed: number = 0.3) => {
   useEffect(() => {
     const elements = document.querySelectorAll(selector);
     elements.forEach((element) => {
@@ -158,7 +158,7 @@ export const useParallaxAnimation = (selector: string) => {
           y: 0,
         },
         {
-          y: -50,
+          y: -50 * speed,
           ease: 'none',
           scrollTrigger: {
             trigger: element,
@@ -173,5 +173,5 @@ export const useParallaxAnimation = (selector: string) => {
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, [selector]);
+  }, [selector, speed]);
 };
