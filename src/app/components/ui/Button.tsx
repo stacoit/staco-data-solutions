@@ -1,10 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
+import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends HTMLMotionProps<"button"> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   children: ReactNode;
