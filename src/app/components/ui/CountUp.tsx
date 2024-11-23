@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { useInView } from 'framer-motion';
 
 interface CountUpProps {
@@ -26,7 +26,7 @@ export default function CountUp({
   const frameRate = 1000 / 60;
   const totalFrames = Math.round(duration * 60);
 
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     let frame = 0;
     const counter = setInterval(() => {
       frame++;
@@ -42,13 +42,13 @@ export default function CountUp({
     }, frameRate);
 
     return () => clearInterval(counter);
-  };
+  }, [end, totalFrames, frameRate]);
 
   useEffect(() => {
     if (isInView) {
       startAnimation();
     }
-  }, [end, totalFrames, isInView, frameRate]);
+  }, [isInView, startAnimation]);
 
   const formatNumber = (num: number) => {
     const parts = num.toFixed(decimals).split('.');
