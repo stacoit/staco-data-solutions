@@ -42,7 +42,7 @@ const Navbar = () => {
             className="flex items-center space-x-2"
           >
             <Image
-              src="/images/sds_logo.png"
+              src="/staco-data-solutions/images/sds_logo.png"
               alt="Staco Data Solutions Logo"
               width={32}
               height={32}
