@@ -1,8 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+type GSAPTarget = string | Element | Element[] | NodeList | null;
+type GSAPVars = gsap.TweenVars;
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,7 +20,7 @@ const defaultScrollTriggerConfig = {
 export const useGSAPAnimation = () => {
   useEffect(() => {
     // Basic fade in for all scroll-animate elements
-    gsap.utils.toArray('.scroll-animate').forEach((element: any) => {
+    gsap.utils.toArray('.scroll-animate').forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {
@@ -38,7 +41,7 @@ export const useGSAPAnimation = () => {
     });
 
     // Gentle scale animation
-    gsap.utils.toArray('.scale-animate').forEach((element: any) => {
+    gsap.utils.toArray('.scale-animate').forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {
@@ -59,7 +62,7 @@ export const useGSAPAnimation = () => {
     });
 
     // Simple text reveal
-    gsap.utils.toArray('.text-reveal').forEach((element: any) => {
+    gsap.utils.toArray('.text-reveal').forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {
@@ -80,7 +83,7 @@ export const useGSAPAnimation = () => {
     });
 
     // Subtle slide animations
-    gsap.utils.toArray('.slide-right').forEach((element: any) => {
+    gsap.utils.toArray('.slide-right').forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {
@@ -100,7 +103,7 @@ export const useGSAPAnimation = () => {
       );
     });
 
-    gsap.utils.toArray('.slide-left').forEach((element: any) => {
+    gsap.utils.toArray('.slide-left').forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {
@@ -121,7 +124,7 @@ export const useGSAPAnimation = () => {
     });
 
     // Stagger container animations
-    gsap.utils.toArray('.stagger-container').forEach((container: any) => {
+    gsap.utils.toArray('.stagger-container').forEach((container: GSAPTarget) => {
       const items = container.children;
       gsap.fromTo(
         items,
@@ -152,7 +155,7 @@ export const useGSAPAnimation = () => {
 // Smoother parallax effect
 export const useParallaxAnimation = (selector: string, speed: number = 0.3) => {
   useEffect(() => {
-    gsap.utils.toArray(selector).forEach((element: any) => {
+    gsap.utils.toArray(selector).forEach((element: GSAPTarget) => {
       gsap.fromTo(
         element,
         {

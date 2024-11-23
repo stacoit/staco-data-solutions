@@ -6,24 +6,28 @@ import { useGSAPAnimation, useParallaxAnimation } from '../hooks/useGSAP';
 
 const services = [
   {
+    id: 1,
     title: 'Data Analytics',
     description: 'Transform raw data into meaningful insights with our advanced analytics solutions.',
     icon: '📊',
     features: ['Real-time Analytics', 'Custom Dashboards', 'Predictive Analysis'],
   },
   {
+    id: 2,
     title: 'Machine Learning',
     description: 'Leverage AI and ML to automate processes and make data-driven decisions.',
     icon: '🤖',
     features: ['Deep Learning', 'Neural Networks', 'AutoML Solutions'],
   },
   {
+    id: 3,
     title: 'Cloud Solutions',
     description: 'Secure and scalable cloud infrastructure for your data needs.',
     icon: '☁️',
     features: ['Cloud Migration', 'Serverless Architecture', 'Multi-cloud Strategy'],
   },
   {
+    id: 4,
     title: 'Data Security',
     description: 'Enterprise-grade security measures to protect your valuable data assets.',
     icon: '🔒',
@@ -57,9 +61,9 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div
-              key={service.title}
+              key={service.id}
               className="scroll-animate bg-white/80 backdrop-blur-lg rounded-2xl p-8 border border-primary/10 hover:border-primary/20 transition-all duration-300 hover:shadow-lg"
             >
               {/* Service Icon */}

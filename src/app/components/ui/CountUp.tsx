@@ -26,25 +26,29 @@ export default function CountUp({
   const frameRate = 1000 / 60;
   const totalFrames = Math.round(duration * 60);
 
+  const startAnimation = () => {
+    let frame = 0;
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const currentCount = Math.round(end * progress);
+
+      if (frame === totalFrames) {
+        setCount(end);
+        clearInterval(counter);
+      } else {
+        setCount(currentCount);
+      }
+    }, frameRate);
+
+    return () => clearInterval(counter);
+  };
+
   useEffect(() => {
     if (isInView) {
-      let frame = 0;
-      const counter = setInterval(() => {
-        frame++;
-        const progress = frame / totalFrames;
-        const currentCount = Math.round(end * progress);
-
-        if (frame === totalFrames) {
-          setCount(end);
-          clearInterval(counter);
-        } else {
-          setCount(currentCount);
-        }
-      }, frameRate);
-
-      return () => clearInterval(counter);
+      startAnimation();
     }
-  }, [end, totalFrames, isInView]);
+  }, [end, totalFrames, isInView, frameRate]);
 
   const formatNumber = (num: number) => {
     const parts = num.toFixed(decimals).split('.');

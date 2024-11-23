@@ -122,7 +122,7 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-container">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
                 className="scroll-animate bg-white/80 backdrop-blur-lg rounded-xl p-6 border border-primary/10 hover:border-primary/20 transition-all duration-300"
@@ -147,12 +147,12 @@ export default function Home() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto stagger-container">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
-                key={index}
+                key={testimonial.author}
                 className="scroll-animate bg-white/80 backdrop-blur-lg rounded-xl p-8 border border-primary/10"
               >
-                <div className="text-4xl mb-6 text-primary/20 scale-animate">"</div>
+                <div className="text-4xl mb-6 text-primary/20 scale-animate">&ldquo;</div>
                 <blockquote className="text-lg text-foreground/80 mb-6 slide-right">
                   {testimonial.quote}
                 </blockquote>
@@ -174,7 +174,7 @@ export default function Home() {
               Ready to Transform Your Data?
             </h2>
             <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto text-reveal">
-              Let's discuss how our solutions can help your business achieve its goals.
+              Let&apos;s discuss how our solutions can help your business achieve its goals.
             </p>
             <a
               href="/contact"
