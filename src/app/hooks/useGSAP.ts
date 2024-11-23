@@ -4,8 +4,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-type GSAPTarget = string | Element | Element[] | NodeList | null;
-
 gsap.registerPlugin(ScrollTrigger);
 
 const defaultScrollTriggerConfig = {
@@ -17,7 +15,8 @@ const defaultScrollTriggerConfig = {
 export const useGSAPAnimation = () => {
   useEffect(() => {
     // Basic fade in for all scroll-animate elements
-    gsap.utils.toArray('.scroll-animate').forEach((element: GSAPTarget) => {
+    const scrollElements = document.querySelectorAll('.scroll-animate');
+    scrollElements.forEach((element) => {
       gsap.fromTo(
         element,
         {
@@ -37,7 +36,8 @@ export const useGSAPAnimation = () => {
     });
 
     // Gentle scale animation
-    gsap.utils.toArray('.scale-animate').forEach((element: GSAPTarget) => {
+    const scaleElements = document.querySelectorAll('.scale-animate');
+    scaleElements.forEach((element) => {
       gsap.fromTo(
         element,
         {
@@ -57,7 +57,8 @@ export const useGSAPAnimation = () => {
     });
 
     // Simple text reveal
-    gsap.utils.toArray('.text-reveal').forEach((element: GSAPTarget) => {
+    const textElements = document.querySelectorAll('.text-reveal');
+    textElements.forEach((element) => {
       gsap.fromTo(
         element,
         {
@@ -77,7 +78,8 @@ export const useGSAPAnimation = () => {
     });
 
     // Subtle slide animations
-    gsap.utils.toArray('.slide-right').forEach((element: GSAPTarget) => {
+    const slideRightElements = document.querySelectorAll('.slide-right');
+    slideRightElements.forEach((element) => {
       gsap.fromTo(
         element,
         {
@@ -96,7 +98,8 @@ export const useGSAPAnimation = () => {
       );
     });
 
-    gsap.utils.toArray('.slide-left').forEach((element: GSAPTarget) => {
+    const slideLeftElements = document.querySelectorAll('.slide-left');
+    slideLeftElements.forEach((element) => {
       gsap.fromTo(
         element,
         {
@@ -116,27 +119,26 @@ export const useGSAPAnimation = () => {
     });
 
     // Stagger container animations
-    gsap.utils.toArray('.stagger-container').forEach((container: GSAPTarget) => {
-      if (container instanceof Element) {
-        const items = container.children;
-        gsap.fromTo(
-          items,
-          {
-            opacity: 0,
-            y: 15,
+    const staggerContainers = document.querySelectorAll('.stagger-container');
+    staggerContainers.forEach((container) => {
+      const items = container.children;
+      gsap.fromTo(
+        items,
+        {
+          opacity: 0,
+          y: 15,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: container,
+            ...defaultScrollTriggerConfig,
           },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.5,
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: container,
-              ...defaultScrollTriggerConfig,
-            },
-          }
-        );
-      }
+        }
+      );
     });
 
     return () => {
@@ -146,16 +148,17 @@ export const useGSAPAnimation = () => {
 };
 
 // Smoother parallax effect
-export const useParallaxAnimation = (selector: string, speed: number = 0.3) => {
+export const useParallaxAnimation = (selector: string) => {
   useEffect(() => {
-    gsap.utils.toArray(selector).forEach((element: GSAPTarget) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
       gsap.fromTo(
         element,
         {
           y: 0,
         },
         {
-          y: -50 * speed,
+          y: -50,
           ease: 'none',
           scrollTrigger: {
             trigger: element,
@@ -166,5 +169,9 @@ export const useParallaxAnimation = (selector: string, speed: number = 0.3) => {
         }
       );
     });
-  }, [selector, speed]);
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [selector]);
 };
