@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useGSAPAnimation, useParallaxAnimation } from '../hooks/useGSAP';
+import Link from 'next/link';
 
 const services = [
   {
@@ -102,12 +103,12 @@ export default function ServicesPage() {
             whileTap={{ scale: 0.95 }}
             className="inline-block"
           >
-            <a
+            <Link
               href="/contact"
               className="inline-block px-8 py-4 bg-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-accent hover:shadow-lg hover:shadow-primary/20 scale-animate"
             >
               Get Started with Our Services
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

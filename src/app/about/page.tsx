@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useGSAPAnimation, useParallaxAnimation } from '../hooks/useGSAP';
 import CountUp from '../components/ui/CountUp';
+import Link from 'next/link';
 
 const stats = [
   { 
@@ -134,12 +135,12 @@ export default function AboutPage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a
+            <Link
               href="/contact"
               className="inline-block px-8 py-4 bg-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-accent hover:shadow-lg hover:shadow-primary/20 scale-animate"
             >
               Get in Touch
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

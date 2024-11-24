@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import Hero from './components/Hero';
 import { useGSAPAnimation, useParallaxAnimation } from './hooks/useGSAP';
 import CountUp from './components/ui/CountUp';
+import Link from 'next/link';
 
 const features = [
   {
@@ -176,12 +177,12 @@ export default function Home() {
             <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto text-reveal">
               Let&apos;s discuss how our solutions can help your business achieve its goals.
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-block px-8 py-4 bg-primary text-white rounded-lg font-semibold transition-all duration-300 hover:bg-accent hover:shadow-lg hover:shadow-primary/20 scale-animate"
             >
               Get Started Today
-            </a>
+            </Link>
           </div>
         </div>
       </section>
