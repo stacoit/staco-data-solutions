@@ -41,7 +41,7 @@ export const siteConfig: SiteConfig = {
   links: {
     twitter: 'https://twitter.com/stacodata',
     github: 'https://github.com/staco',
-    linkedin: 'https://linkedin.com/company/staco-data-solutions',
+    linkedin: 'https://linkedin.com/company',
   },
   contact: {
     email: 'contact@stacodatasolutions.com',

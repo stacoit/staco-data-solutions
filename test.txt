@@ -1,0 +1,1 @@
+sudo certbot -d stacodatasolutions.com -d www.stacodatasolutions.com -m server.stacoit@gmail.com --apache --agree-tos  --no-eff-email --redirect

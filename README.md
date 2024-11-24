@@ -33,7 +33,7 @@ Staco Data Solutions is a cutting-edge data analytics and business intelligence 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/stacoit/staco-data-solutions.git
+   git clone https://github.com/stacoit.git
    cd staco-data-solutions
    ```
 

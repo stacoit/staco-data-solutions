@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   title: "Staco Data Solutions",
   description: "Transform your data into actionable insights with cutting-edge analytics and machine learning solutions.",
   icons: {
-    icon: '/staco-data-solutions/images/sds_logo.png',
-    apple: '/staco-data-solutions/images/sds_logo.png',
+    icon: '/images/sds_logo.png',
+    apple: '/images/sds_logo.png',
   }
 };
 
@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/staco-data-solutions/images/sds_logo.png" />
+        <link rel="icon" href="/images/sds_logo.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}
