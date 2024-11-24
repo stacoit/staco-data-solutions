@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Staco Data Solutions
 
-## Getting Started
+<div align="center">
+  <img src="public/logo.png" alt="Staco Data Solutions Logo" width="200"/>
+  <h3>Transforming Data into Business Intelligence</h3>
+</div>
 
-First, run the development server:
+[![Website](https://img.shields.io/badge/Website-stacodatasolutions.com-blue)](https://stacodatasolutions.com)
+[![Next.js](https://img.shields.io/badge/Built%20with-Next.js%2014-black)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/Powered%20by-TypeScript-blue)](https://www.typescriptlang.org)
+[![TailwindCSS](https://img.shields.io/badge/Styled%20with-TailwindCSS-06B6D4)](https://tailwindcss.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌟 About Us
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Staco Data Solutions is a cutting-edge data analytics and business intelligence company. We specialize in transforming complex data into actionable insights, helping businesses make informed decisions and drive growth through data-driven strategies.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🎯 Our Services
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Data Analytics & Visualization** - Transform raw data into meaningful insights
+- **Business Intelligence Solutions** - Make informed decisions with powerful BI tools
+- **Custom Analytics Solutions** - Tailored solutions for your unique business needs
+- **Data Strategy Consulting** - Expert guidance for your data journey
 
-## Learn More
+## 💻 Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: TailwindCSS, GSAP for animations
+- **UI Components**: Custom components with modern design principles
+- **Performance**: Optimized for speed and SEO
+- **Deployment**: Production-grade infrastructure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/stacoit/staco-data-solutions.git
+   cd staco-data-solutions
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open browser**
+   Visit [http://localhost:3000](http://localhost:3000)
+
+## 🌐 Production Deployment
+
+Our website is deployed at [stacodatasolutions.com](https://stacodatasolutions.com)
+
+## 📫 Contact Us
+
+- **Website**: [stacodatasolutions.com](https://stacodatasolutions.com)
+- **Email**: contact@stacodatasolutions.com
+- **Location**: Silicon Valley, California
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+Copyright 2024 Staco Data Solutions. All rights reserved.
