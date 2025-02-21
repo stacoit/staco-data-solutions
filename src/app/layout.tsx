@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 import dynamic from 'next/dynamic';
 
 const RouteLoader = dynamic(() => import('../components/layout/RouteLoader'), {
@@ -37,8 +38,9 @@ export default function RootLayout({
         <Navbar />
         <RouteLoader />
         <PageTransition>
-          <main className="pt-16">{children}</main>
+          <main>{children}</main>
         </PageTransition>
+        <Footer />
       </body>
     </html>
   );

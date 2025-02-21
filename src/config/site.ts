@@ -1,10 +1,3 @@
-import {
-  Home,
-  BookOpen,
-  Users,
-  Mail,
-  type LucideIcon
-} from "lucide-react"
 
 import InsightsIcon from '@/assets/home/insights_icon.svg';
 import RoboIcon from '@/assets/home/robo_icon.svg';
@@ -16,76 +9,23 @@ import LeadIcon from '@/assets/service/lead_icon.svg';
 import MarketingIcon from '@/assets/service/marketing_icon.svg';
 import TickIcon from '@/assets/service/tick.svg';
 
-
-export type SiteConfig = {
-  name: string
-  description: string
-  url: string
-  ogImage: string
-  links: {
-    twitter: string
-    github: string
-    linkedin: string
-  }
-  contact: {
-    email: string
-    phone: string
-    address: string
-  }
+type SiteConfig = {
   navigation: {
     name: string
     href: string
-    icon: LucideIcon
-  }[]
-  features: {
-    name: string
-    description: string
   }[]
 }
 
-export const siteConfig: SiteConfig = {
-  name: 'Staco Data Solutions',
-  description:
-    'Transform your data into actionable insights with cutting-edge analytics and machine learning solutions.',
-  url: 'https://stacodatasolutions.com',
-  ogImage: 'https://stacodatasolutions.com/og.jpg',
-  links: {
-    twitter: 'https://twitter.com/stacodata',
-    github: 'https://github.com/staco',
-    linkedin: 'https://linkedin.com/company',
-  },
-  contact: {
-    email: 'contact@stacodatasolutions.com',
-    phone: '+1 (555) 123-4567',
-    address: '2712 County Line Road, St Petersburg, Florida USA 33701',
-  },
+const siteConfig: SiteConfig = {
   navigation: [
-    { name: 'Home', href: '/home', icon: Home },
-    { name: 'Services', href: '/services', icon: BookOpen },
-    { name: 'About', href: '/about', icon: Users },
-    { name: 'Contact', href: '/contact', icon: Mail },
-  ],
-  features: [
-    {
-      name: 'Data Analytics',
-      description: 'Transform raw data into meaningful insights with our advanced analytics solutions.',
-    },
-    {
-      name: 'Machine Learning',
-      description: 'Leverage AI and ML to automate processes and make data-driven decisions.',
-    },
-    {
-      name: 'Cloud Solutions',
-      description: 'Secure and scalable cloud infrastructure for your data needs.',
-    },
-    {
-      name: 'Data Security',
-      description: 'Enterprise-grade security measures to protect your valuable data assets.',
-    },
+    { name: 'Home', href: '/home' },
+    { name: 'About', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
   ],
 }
 
-const home = {
+const homeContent = {
   hero: {
     title: 'Your Data, Our Vision Unlock Boundless Possibilities with Staco.',
     subtitle: '“Explore new horizons. Empower your future with data.”',
@@ -285,7 +225,7 @@ const home = {
   },
 };
 
-const about = {
+const aboutContent = {
   hero: {
     title: 'Empowering Businesses Through Data',
     subtitle: 'Turning information into innovation, growth, and success.',
@@ -345,7 +285,7 @@ const about = {
   },
 };
 
-const service = {
+const serviceContent = {
   hero: {
     title: 'Our Service',
     description: 'Transformative Data Solutions for Every Business Need',
@@ -428,7 +368,7 @@ const service = {
   tick: TickIcon
 };
 
-const contact = {
+const contactContent = {
   hero: {
     title: 'Let’s Shape Your Success Together',
     subtitle: 'Whether you have questions, need assistance, or are ready to transform your business, we’re here to help.',
@@ -461,7 +401,7 @@ const contact = {
   },
 };
 
-const footer = {
+const footerContent = {
   title: 'Staco Data Solutions',
   description: 'Unlocking the Power of Data for Your Business Growth',
   paragraph: 'Transform your business with cutting-edge data insights and innovative technology. We turn complex data into actionable strategies that drive growth, optimize operations, and fuel success.',
@@ -535,9 +475,10 @@ const footer = {
 }
 
 export {
-  Home,
-  about,
-  service,
-  contact,
-  footer
+  siteConfig,
+  homeContent,
+  aboutContent,
+  serviceContent,
+  contactContent,
+  footerContent
 }

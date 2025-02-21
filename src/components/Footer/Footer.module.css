@@ -1,0 +1,150 @@
+.footer {
+    background-color: var(--primary);
+    color: var(--text);
+    padding: 4rem 2rem 2rem;
+    font-family: Montserrat, sans-serif;
+    z-index: 3;
+}
+
+.footerContent {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 4rem;
+}
+
+.companyInfo h2 {
+    z-index: 3;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+}
+
+.companyInfo h3 {
+    color: var(--text);
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+    max-width: 300px;
+}
+
+.companyInfo p {
+    color: var(--footer);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    max-width: 400px;
+}
+
+.quickLinks h4,
+.services h4,
+.contact h4 {
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+}
+
+.quickLinks ul,
+.services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quickLinks li,
+.services li {
+    margin-bottom: 0.75rem;
+}
+
+.quickLinks a,
+.services a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.quickLinks a:hover,
+.services a:hover {
+    opacity: 1;
+}
+
+.contact p {
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem;
+    opacity: 0.9;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footerContent {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .companyInfo {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .companyInfo h2 {
+        font-size: 1.75rem;
+    }
+
+    .companyInfo h3 {
+        font-size: 1.25rem;
+    }
+
+    .copyright {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .footerContent {
+        gap: 2rem;
+    }
+
+    .companyInfo h2 {
+        font-size: 1.5rem;
+    }
+
+    .companyInfo h3 {
+        font-size: 1.125rem;
+    }
+
+    .quickLinks h4,
+    .services h4,
+    .contact h4 {
+        font-size: 1.125rem;
+        margin: 0 0 1rem;
+    }
+}
