@@ -4,7 +4,7 @@
     justify-content: space-between;
     padding: 1rem 4rem;
     background: #FBFBFB;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add this line for drop shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     position: fixed;
     top: 0;
     left: 0;
@@ -287,7 +287,6 @@
 }
 
 @media (max-width: 768px) {
-
     .navbar {
         padding: 0.5rem 2rem;
     }

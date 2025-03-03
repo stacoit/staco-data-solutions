@@ -1,0 +1,158 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sliderContainer {
+    position: relative;
+    padding: 2rem 0;
+}
+
+
+.decorativeCircle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0, 86, 210, 0.3);
+    border-radius: 50%;
+    left: -80%;
+    top: 100%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.decorativeCircle2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 86, 210, 0.3);
+    border-radius: 50%;
+    left: -50%;
+    top: 70%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.testimonialCard {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    /* min-height: 300px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quoteIcon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review {
+    font-size: 1.2rem;
+    font-family: Montserrat;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.name {
+    font-size: 1rem;
+    font-family: Montserrat;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 0.2rem;
+}
+
+.rating {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+}
+
+.star,
+.starHalf,
+.starEmpty {
+    font-size: 1.5rem;
+}
+
+.star {
+    color: #ffd700;
+}
+
+.starHalf {
+    position: relative;
+    color: #ffd700;
+    overflow: hidden;
+}
+
+.starHalf::after {
+    content: "★";
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #e0e0e0;
+}
+
+.starEmpty {
+    color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 400px;
+    }
+
+    .main {
+        padding: 2rem 1rem;
+    }
+
+    .review {
+        font-size: 1rem;
+    }
+
+    .name {
+        font-size: 0.8rem;
+    }
+
+    .decorativeCircle {
+        width: 150px;
+        height: 150px;
+        top: 90%;
+        left: -20%;
+    }
+
+    .decorativeCircle2 {
+        top: 5%;
+        left: 86%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 360px) {  
+    .container {
+        max-width: 320px;
+    }
+}

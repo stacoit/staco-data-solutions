@@ -37,17 +37,17 @@ const homeContent = {
     paragraph: 'At Staco, we offer a dynamic data platform that brings B2B data, processing, and analytics together under one roof. Whether you’re looking to increase sales, grow your business, or optimize lead generation, we have the right solution for you.',
     cards: [
       {
-        id: 1,
+        id: "01",
         name: 'B2B Database Solutions',
         text: '"Targeted, customized, and validated lists designed to meet your specific needs delivering precision for impactful marketing."'
       },
       {
-        id: 2,
+        id: "02",
         name: 'Data Processing Services',
         text: '"We provide clients accurate data with real-time processing, ensuring precision and empowering informed decisions."'
       },
       {
-        id: 3,
+        id: "03",
         name: 'Executive Database',
         text: '"Precision-targeted contact records designed for reaching top executives and key decision-makers effectively."'
       }
@@ -156,13 +156,13 @@ const homeContent = {
         id: 2,
         review: '"Staco’s data solutions revolutionized our marketing efforts. We saw a 4X increase in qualified leads in just 90 days."',
         name: 'Tech Startup, USA',
-        rating: 5
+        rating: 4.5
       },
       {
         id: 3,
         review: '"The data provided by Staco helped us identify untapped markets and create a more effective sales strategy."',
         name: 'VP of Sales, Healthcare Provider',
-        rating: 5
+        rating: 4
       },
       {
         id: 4,
@@ -186,7 +186,7 @@ const homeContent = {
       {
         id: 2,
         name: 'AI-Driven',
-        text: 'Technology-powered, data-driven marketing solutions.',
+        text: 'Technology-powered, data-driven marketing data solutions.',
         icon: RoboIcon
       },
     ]

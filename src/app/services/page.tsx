@@ -1,10 +1,16 @@
 'use client'
 
 import Service from "@/components/Service/Service";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const ServicePage = () => {
     return (
-        <Service />
+        <>
+            <Navbar />
+            <Service />
+            <Footer />
+        </>
     )
 }
 

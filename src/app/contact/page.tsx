@@ -1,10 +1,16 @@
 'use client'
 
 import Contact from "@/components/Contact/Contact"
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const ContactPage = () => {
     return (
-        <Contact />
+        <>
+            <Navbar />
+            <Contact />
+            <Footer />
+        </>
     )
 }
 

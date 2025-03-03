@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 6rem;
+    background-color: var(--background);
 }
 
 .contentContainer {
@@ -37,11 +38,20 @@
     font-weight: 500;
 }
 
-.image{
+.image {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.ourContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* Hero Section */
@@ -65,6 +75,14 @@
     justify-content: center;
     align-items: center;
     z-index: 0;
+
+    @media screen and (min-width: 1440px) {
+        left: -20%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        left: -15%;
+    }
 }
 
 .heroContainer {
@@ -90,7 +108,7 @@
 
 .heroSubtitle {
     color: var(--text);
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -133,7 +151,7 @@
     width: 95%;
     height: 100%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -142,17 +160,428 @@
     border-radius: 1.2rem;
     background-color: var(--background);
     padding: 4rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.solutionCards {
+    margin-top: 4rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.solutionCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.solutionNumber {
+    color: rgba(60, 64, 67, 0.15);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.solutionTitle {
+    color: var(--description);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.solutionDescription {
+    color: var(--paragraph);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Why Choose Staco Styles */
+.whyChooseStaco {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+    margin-top: 2rem;
+    padding: 4rem 2rem;
+}
+
+.whyChooseStacoContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dotElements {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    z-index: 0;
+}
+
+.whyChooseStacoCardsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.whyChooseStacoCards {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.whyChooseStacoPara {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.whyChooseStacoCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    padding-left: 4rem;
+    padding-right: 2rem;
+    background-color: var(--background);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.whyChooseStacoCard:not(:nth-child(2)) {
+    margin-left: 4rem;
+}
+
+.whyChooseStacoCircle {
+    position: absolute;
+    top: 48%;
+    left: -2%;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgba(0, 86, 210, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whyChooseStacoTitle {
+    color: var(--description);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.whyChooseStacoPara {
+    color: var(--paragraph);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Our Strategy Styles */
+.ourStrategy {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 2;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    background-color: #EEEBE6;
+    padding: 4rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.strategyCards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.strategyCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.strategyCardSpace {
+    width: 40%;
+}
+
+/* Lead Generation Styles */
+.leadGeneration {
+    margin-top: 4rem;
+    width: 90%;
+    flex-direction: row;
+}
+
+.lead {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.leadContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.radioButton {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary) !important;
+    border: 2px solid var(--primary) !important;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.leadPoints{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.leadPoint{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.leadPointTitle{
+    color: var(--description);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.leadPointDescription{
+    color: var(--paragraph);
+    font-size: 1rem;
+    font-weight: 500;
+}   
+
+/* Client Results Styles */
+.clientResults{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 4rem;
+}
+
+.clientResultsCards{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.clientResultsCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 4rem;
+    gap: 0.5rem;
+}
+
+.clientResultsCard:nth-child(2){
+    border-left : 2px solid var(--description);
+    border-right: 2px solid var(--description);
+}
+
+.clientResultsNumber{
+    color: var(--primary);
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.clientResultsTitle{
+    color: var(--description);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.clientResultsDescription{
+    text-align: center;
+    color: var(--paragraph);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Data Insights Styles */
+.dataInsights{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0rem;
+}
+
+.dataInsightsCards{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.dataInsightsCard {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    background-color: var(--background);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dataInsightsCard:first-child{
+    margin-left: 6rem;
+}
+
+.dataInsightsHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dataInsightsTitle{
+    color: var(--description);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.dataInsightsDescription{
+    color: var(--paragraph);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Advantage Section */
+.advantage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0rem;
+}
+
+/* Customer Rating Styles  */
+.customerRating{
+    margin-top: 6rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0rem;
+}
+
+.ourCommunityContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ourCommunityParagraph{
+    text-align: center;
+}
+
+.dotElementsOurCommunity {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+/* FAQ Styles */
+.faq{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0rem;
 }
 
 @media screen and (max-width: 763px) {
+
     /* Common Styles */
     .title {
         font-size: 1.5rem;
-    }   
+    }
 
     .description {
         font-size: 1.8rem;
-    }   
+    }
 
     .paragraph {
         font-size: 1rem;
@@ -164,7 +593,7 @@
     }
 
     .heroSubtitle {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 
     .heroButton {
@@ -175,15 +604,48 @@
     .heroImage {
         width: 100%;
     }
+
+    /* Our Solution Styles */
+    .solutionCards {
+        margin-top: 3rem;
+        gap: 1rem;
+    }
+
+    /* Why Choose Staco Styles */
+    .whyChooseStacoCards {
+        gap: 1rem;
+    }
+
+    .whyChooseStacoCard:not(:nth-child(2)) {
+        margin-left: 0;
+    }
+
+    .strategyCards {
+        gap: 1rem;
+    }
+
+    /* Data Insights Styles */
+    .dataInsightsCards{
+        gap: 1rem;
+    }
+
+    .dataInsightsCard {
+        width: 100%;
+    }
+
+    .dataInsightsCard:first-child{
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 600px) {
+
     /* Common Styles */
     .container {
         margin-top: 4rem;
     }
 
-    .contentContainer{
+    .contentContainer {
         width: 100%;
     }
 
@@ -193,14 +655,26 @@
 
     .description {
         font-size: 1.8rem;
-    }   
+    }
 
     .paragraph {
         font-size: 1rem;
     }
 
-    .image{
+    .image {
         width: 100%;
+    }
+
+    .ourContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .leadGeneration {
+        width: 100%;
+        margin-top: 3rem;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     /* Hero Styles */
@@ -209,12 +683,12 @@
         height: 100%;
     }
 
-    .ellipseFog{
+    .ellipseFog {
         top: 20%;
         width: 160%;
     }
 
-    .heroContent{
+    .heroContent {
         width: 100%;
     }
 
@@ -223,7 +697,7 @@
     }
 
     .heroSubtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .heroButton {
@@ -238,14 +712,196 @@
 
     /* Our Solution Styles */
     .ourSolution {
-        width: 95%;
-        height: 100%;
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .solutionCards {
+        margin-top: 2rem;
         flex-direction: column;
+        gap: 2rem;
+    }
+
+    .solutionCard {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .solutionNumber {
+        font-size: 3rem;
+    }
+
+    .solutionTitle {
+        font-size: 1.2rem;
+    }
+
+    .solutionDescription {
+        font-size: 1rem;
+    }
+
+    /* Why Choose Staco Styles */
+    .whyChooseStaco {
+        padding: 2rem 1rem;
+        width: 100%;
+    }
+
+    .whyChooseStacoContainer {
+        flex-direction: column;
+    }
+
+    .dotElements {
+        top: -10%;
+    }
+
+    .dotElements img {
+        width: 100%;
+        height: 100px;
+    }
+
+    .whyChooseStacoCardsContainer {
+        flex-direction: column;
+    }
+
+    .whyChooseStacoCard:not(:nth-child(2)) {
+        margin-left: 0;
+    }
+
+    .whyChooseStacoCards {
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .whyChooseStacoPara {
+        width: 100%;
+    }
+
+    .whyChooseStacoCard {
+        padding-left: 4rem;
+        padding-right: 2rem;
+    }
+
+    .whyChooseStacoCardTitle {
+        font-size: 1.5rem;
+    }
+
+    .whyChooseStacoCardDescription {
+        font-size: 1rem;
+    }
+
+    /* Our Strategy Styles */
+    .strategyCard {
+        flex-direction: column;
+    }
+
+    .strategyCardSpace {
+        display: none;
+    }
+
+    .strategyCardSpace {
+        width: 30%;
+    }
+
+    /* Lead Generation Styles */
+    .leadGeneration {
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .lead {
+        width: 100%;
+    }
+
+    .leadPointTitle {
+        font-size: 1rem;
+    }
+
+    .leadPointDescription {
+        font-size: 0.8rem;
+    }
+
+    /* Client Results Styles */
+    .clientResults {
+        padding: 2rem 1rem;
+    }
+
+    .clientResultsCards{
+        flex-direction: column;
+    }
+
+    .clientResultsCard{
+        width: 100%;
+    }
+
+    .clientResultsNumber {
+        font-size: 3rem;
+    }
+
+    .clientResultsCard:nth-child(2){
+        border: none;
+    }
+
+    .clientResultsTitle {
+        font-size: 1.2rem;
+    }
+
+    .clientResultsDescription {
+        font-size: 0.8rem;
+    }
+
+    /* Data Insights Styles */
+    .dataInsights{
+        padding: 2rem 1rem;
+    }
+
+    .dataInsightsCards{
+        width: 100%;
+        gap: 2rem;
+    }
+
+    .dataInsightsCard{
+        width: 100%;
+    }
+
+    .dataInsightsTitle{
+        font-size: 1rem;
+    }
+
+    .dataInsightsDescription{
+        font-size: 0.8rem;
+    }
+
+    /* Advantage Section */
+    .advantage{
+        padding: 2rem 1rem;
+    }
+
+    /* Customer Rating Styles */
+    .customerRating{
+        margin-top: 4rem;
+        padding: 2rem 1rem;
+    }
+
+    .ourCommunityContainer{
+        width: 100%;
+    }
+
+    .dotElementsOurCommunity {
+        top: -2%;
+    }
+
+    .dotElementsOurCommunity img {
+        width: 100%;
+        height: 100px;
+    }
+
+    /* FAQ Styles */
+    .faq{
         padding: 2rem 1rem;
     }
 }
 
 @media screen and (max-width: 400px) {
+
     /* Hero Styles */
     .heroTitle {
         font-size: 1.5rem;
@@ -258,14 +914,54 @@
     .heroButton {
         width: 120px;
         font-size: 0.7rem;
-    }   
+    }
 
     .heroImage {
         height: 90%;
         width: 90%;
     }
 
-    .ellipseFog{
+    .ellipseFog {
         width: 180%;
+    }
+
+    /* Our Solution Styles */
+    .solutionCards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .solutionCard {
+        padding: 0.8rem;
+    }
+
+    .solutionNumber {
+        font-size: 2.5rem;
+    }
+
+    .solutionTitle {
+        font-size: 1rem;
+    }
+
+    .solutionDescription {
+        font-size: 0.8rem;
+    }
+
+    /* Why Choose Staco Styles */
+    .whyChooseStacoContainer {
+        flex-direction: column;
+    }
+
+    .whyChooseStacoCardsContainer {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .whyChooseStacoCardTitle {
+        font-size: 1.5rem;
+    }
+
+    .whyChooseStacoCardDescription {
+        font-size: 1rem;
     }
 }

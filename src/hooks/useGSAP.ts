@@ -9,142 +9,254 @@ gsap.registerPlugin(ScrollTrigger);
 const defaultScrollTriggerConfig = {
   start: 'top bottom-=50',
   end: 'bottom top+=50',
-  toggleActions: 'play none none reverse',
+  toggleActions: 'play reverse play reverse',
 };
 
-export const useGSAPAnimation = () => {
+export const useGSAPAnimation = (selector: string, animationType: string) => {
   useEffect(() => {
-    // Basic fade in for all scroll-animate elements
-    const scrollElements = document.querySelectorAll('.scroll-animate');
+    const scrollElements = document.querySelectorAll(selector);
+
     scrollElements.forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 15,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: element,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
-    });
+      switch (animationType) {
+        case 'fullExperience':
+          // Initial reveal
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              scale: 0.8,
+              rotationY: 30,
+              rotationX: 10,
+              transformOrigin: "center center"
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              rotationY: 0,
+              rotationX: 0,
+              duration: 1.5,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
 
-    // Gentle scale animation
-    const scaleElements = document.querySelectorAll('.scale-animate');
-    scaleElements.forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          scale: 0.95,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: element,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
-    });
+          // Glow and pulse
+          gsap.fromTo(
+            element,
+            {
+              filter: "brightness(1) drop-shadow(0 0 0px rgba(0, 0, 0, 0.8))"
+            },
+            {
+              filter: "brightness(1.2) drop-shadow(0 0 20px rgba(0, 0, 0, 1))",
+              duration: 1.5,
+              repeat: -1,
+              yoyo: true,
+              ease: "power1.inOut",
+            }
+          );
 
-    // Simple text reveal
-    const textElements = document.querySelectorAll('.text-reveal');
-    textElements.forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          y: 10,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: element,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
-    });
+          break;
 
-    // Subtle slide animations
-    const slideRightElements = document.querySelectorAll('.slide-right');
-    slideRightElements.forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          x: -15,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: element,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
-    });
 
-    const slideLeftElements = document.querySelectorAll('.slide-left');
-    slideLeftElements.forEach((element) => {
-      gsap.fromTo(
-        element,
-        {
-          opacity: 0,
-          x: 15,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: element,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
-    });
+        case 'scaleRotateCarousel':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              scale: 0.8,
+              rotation: 10
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              rotation: 0,
+              duration: 1.2,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
 
-    // Stagger container animations
-    const staggerContainers = document.querySelectorAll('.stagger-container');
-    staggerContainers.forEach((container) => {
-      const items = container.children;
-      gsap.fromTo(
-        items,
-        {
-          opacity: 0,
-          y: 15,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: container,
-            ...defaultScrollTriggerConfig,
-          },
-        }
-      );
+        case 'flip3D':
+          // 3D Flip Animation
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              rotationY: 180,
+              transformOrigin: "50% 50%"
+            },
+            {
+              opacity: 1,
+              rotationY: 0,
+              duration: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'fadeIn':
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 15 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'scale':
+          gsap.fromTo(
+            element,
+            { opacity: 0, scale: 0.95 },
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'textReveal':
+          gsap.fromTo(
+            element,
+            { opacity: 0, y: 10 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'slideRight':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              x: -15,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'slideLeft':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              x: 15,
+            },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'slideUp':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              y: 15,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'slideDown':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              y: -15,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        case 'fadeInUp':
+          gsap.fromTo(
+            element,
+            {
+              opacity: 0,
+              y: 15,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: element,
+                ...defaultScrollTriggerConfig,
+              },
+            }
+          );
+          break;
+
+        default:
+          break;
+      }
     });
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
-  }, []);
+  }, [selector, animationType]);
 };
 
 // Smoother parallax effect

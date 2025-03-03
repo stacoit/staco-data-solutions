@@ -1,0 +1,15 @@
+/* Swiper customization */
+.swiper {
+    padding: 3rem 1rem !important;
+}
+
+:global(.swiper-pagination-bullet) {
+    width: 10px !important;
+    height: 10px !important;
+    background: #ccc !important;
+    opacity: 1 !important;
+}
+
+:global(.swiper-pagination-bullet-active) {
+    background: #3366ff !important;
+}
