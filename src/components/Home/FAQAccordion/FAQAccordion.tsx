@@ -14,8 +14,6 @@ export default function FAQAccordion() {
     };
 
     useGSAPAnimation(`.${styles.accordionItem}`, "slideUp")
-    useGSAPAnimation(`.${styles.accordionHeader}`, "fadeIn")
-    useGSAPAnimation(`.${styles.accordionBody}`, "fadeIn")
 
     return (
         <div className={styles.container}>
