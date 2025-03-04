@@ -8,7 +8,8 @@ import Solution from '@/assets/home/solution.png';
 
 export default function OurSolution() {
     const ourSolutionContent = homeContent.ourSolution
-    useGSAPAnimation(`.${styles.ourSolution}`, "fadeIn")
+    useGSAPAnimation(`.${styles.ourSolution}`, "scale")
+    useGSAPAnimation(`.${styles.solutionCard}`, "slideUp")
 
     return (
         <>

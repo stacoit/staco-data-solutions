@@ -3,6 +3,7 @@
 import { useState } from "react"
 import styles from "./FAQAccordion.module.css"
 import { homeContent } from "@/config/site"
+import { useGSAPAnimation } from "@/hooks/useGSAP"
 
 export default function FAQAccordion() {
     const accordionData = homeContent.faq.cards;
@@ -10,8 +11,11 @@ export default function FAQAccordion() {
 
     const toggleAccordion = (id: number) => {
         setActiveId(activeId === id ? null : id)
-    }
+    };
 
+    useGSAPAnimation(`.${styles.accordionItem}`, "slideUp")
+    useGSAPAnimation(`.${styles.accordionHeader}`, "fadeIn")
+    useGSAPAnimation(`.${styles.accordionBody}`, "fadeIn")
 
     return (
         <div className={styles.container}>
