@@ -1,0 +1,169 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f8f9fd;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    border: 2px solid #2563eb;
+    box-shadow: 0 24px 40px rgba(37, 99, 235, 0.2);
+    transform: translateY(-10px) scale(1.05) !important;
+    cursor: pointer;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.featuresList {
+    list-style: none;
+    padding: 12px;
+    background-color: #f0f4ff;
+    border-radius: 8px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    font-size: 15px;
+    color: #444;
+}
+
+.checkmark {
+    background-color: #2563eb;
+    border-radius: 50%;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.buttonContainer {
+    margin-top: auto;
+}
+
+.learnMoreButton {
+    margin-top: 1rem;
+    background-color: transparent;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.learnMoreButton:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .featureItem {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .iconContainer {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .featureItem {
+        padding: 8px 12px;
+    }
+
+    .learnMoreButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

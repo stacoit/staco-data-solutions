@@ -371,7 +371,8 @@ const serviceContent = {
 const contactContent = {
   hero: {
     title: 'Let’s Shape Your Success Together',
-    subtitle: 'Whether you have questions, need assistance, or are ready to transform your business, we’re here to help.',
+    description: 'Start the Conversation',
+    paragraph: 'Whether you have questions, need assistance, or are ready to transform your business, we’re here to help.',
     button: 'Get in Touch'
   },
   form: {

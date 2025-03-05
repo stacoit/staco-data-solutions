@@ -1,0 +1,251 @@
+/* Common Styles */
+.contentContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.columnContentContainer {
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.title {
+    color: var(--primary);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.description {
+    color: var(--description);
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.paragraph {
+    margin-top: 0.5rem;
+    color: #3C404399;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageCenter {
+    width: 100%;
+}
+
+.rowContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.columnContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reverseContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* CTA Section */
+.contactHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem;
+    padding-top: 0rem;
+}
+
+
+.CTAContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+.aboutCTAContainer {
+    width: 50%;
+    display: flex;
+    gap: 0.8rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 2rem 2rem 1rem 2rem;
+    background-color: #fff;
+}
+
+
+.buttonsSideDrawer {
+    margin: 0.675rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.contactButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-family: Montserrat;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.46px;
+    outline: none;
+    border: none;
+}
+
+.contactButton {
+    color: #F9FAFB;
+    background-color: #0056D2;
+}
+
+.contactButton:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Header & Container */
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+@media screen and (max-width: 763px) {
+
+    /* Common Styles */
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    /* Common Styles */
+    .contentContainer {
+        width: 100%;
+    }
+
+    .columnContentContainer {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1rem;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .imageCenter {
+        width: 100%;
+    }
+
+    .rowContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .reverseContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .columnContainer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Mission Section */
+    .container {
+        padding: 0rem;
+    }
+
+    .CTAContainer {
+        margin-top: 4rem;
+        padding: 0rem;
+    }
+
+    .contactHeader {
+        padding: 2rem 1rem;
+    }
+
+    .aboutCTAContainer {
+        width: 90%;
+        padding: 1rem 1rem 1rem 1rem;
+    }
+
+    .container {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+}
