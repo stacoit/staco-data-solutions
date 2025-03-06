@@ -1,7 +1,10 @@
 .container {
     width: 100%;
-    min-height: 100vh;
-    background-color: #0056D2;
+    height: 130vh;
+    background-image: url('../../../assets/about/drive_us_bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     padding: 2rem 1rem;
     display: flex;
@@ -165,5 +168,12 @@
 
     .centerImage {
         max-height: 600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+        height: 200vh;
     }
 }

@@ -251,8 +251,30 @@
         width: 90%;
         padding: 1rem 1rem 1rem 1rem;
     }
+
+    .hero {
+        padding: 1rem;
+        padding-top: 2rem;
+        height: 120vh;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.5rem;
+    }
+
+    .heroDescription {  
+        font-size: 1rem;    
+    }
 }
 
-@media screen and (max-width: 400px) {
-    
+@media screen and (max-width: 380px) {
+    .hero {
+        padding: 1rem;
+        padding-top: 2rem;
+        height: 160vh;
+    }
 }

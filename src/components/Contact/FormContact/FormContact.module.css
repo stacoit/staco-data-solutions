@@ -153,6 +153,9 @@
         width: 100%;
         height: 100%;
         background-image: url('../../../assets/contact/contact_us_bg_mobile.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         padding: 0rem;
         margin-bottom: 3rem;
         flex-direction: column;
