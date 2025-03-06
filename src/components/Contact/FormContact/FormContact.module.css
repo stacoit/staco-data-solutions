@@ -1,0 +1,184 @@
+/* Main container */
+.container {
+    display: flex;
+    width: 95%;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../../../assets/contact/contact_us_bg.png');
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 6rem;
+}
+
+/* Left section with blue background */
+.leftSection {
+    color: #000;
+    padding: 4rem;
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+}
+
+.leftContent {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.description {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Right section with form */
+.rightSection {
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    z-index: 2;
+}
+
+/* Form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    padding: 2rem;  
+    border-radius: 1rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+}
+
+.input,
+.textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #2055d0;
+}
+
+.inputError {
+    border-color: #ff3b30;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitButton {
+    background-color: #2055d0;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+    width: fit-content;
+}
+
+.submitButton:hover {
+    background-color: #1a46b0;
+}
+
+.submitButton:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .leftSection {
+        width: 50%;
+        padding: 4rem;
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    }
+
+    .rightSection {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        background-image: url('../../../assets/contact/contact_us_bg_mobile.png');
+        padding: 0rem;
+        margin-bottom: 3rem;
+        flex-direction: column;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .leftSection {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .rightSection {
+        width: 100%;
+        padding: 1.5rem;
+        margin: 0;
+        clip-path: none;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
+}

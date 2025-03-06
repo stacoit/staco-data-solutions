@@ -8,6 +8,7 @@ import { contactContent } from '@/config/site';
 import ContactImg from '@/assets/contact/contact_hero.png';
 import Image from 'next/image';
 import { useGSAPAnimation } from '@/hooks/useGSAP';
+import FormContact from './FormContact/FormContact';
 
 const Contact = () => {
     const contactInfo = contactContent.hero
@@ -29,6 +30,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            <FormContact />
             <MapContainer />
         </div>
     )
