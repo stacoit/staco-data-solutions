@@ -468,11 +468,11 @@ const footerContent = {
   },
   contactUs: {
     title: 'Contact  with us',
-    email: 'contact@stacodatasolutions.com',
+    email: 'info@stacodatasolutions.com',
     phone: '+1 (555) 123-4567',
-    address: '2712 County Line Road, St Petersburg, Florida USA 33701',
+    address: '350 Holger Way, San Jose, CA 95134, USA',
   },
-  copyright: '© 2025 Staco Data Solution | All Rights Reserved'
+  copyright: '© 2024 Staco Data Solution | All Rights Reserved'
 }
 
 export {

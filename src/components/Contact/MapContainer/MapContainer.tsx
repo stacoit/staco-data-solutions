@@ -19,7 +19,7 @@ export default function MapContainer() {
                             <span className={styles.contactLabel}>Address:</span> 350 Holger Way, San Jose, CA 95134, USA
                         </p>
                         <p className={styles.contactLine}>
-                            <span className={styles.contactLabel}>Email:</span> Info@stacodatasolutions.com
+                            <span className={styles.contactLabel}>Email:</span> info@stacodatasolutions.com
                         </p>
                         <p className={styles.contactLine}>
                             <span className={styles.contactLabel}>Phone:</span> +1 (555) 123-4567
