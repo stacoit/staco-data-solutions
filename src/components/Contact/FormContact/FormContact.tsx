@@ -73,6 +73,8 @@ export default function FormContact() {
                 toast.success("Form submitted successfully!")
             } else if (response.status === 400) {
                 toast.error("Invalid inputs. Please check your information.")
+            } else if (response.status === 429) {
+                toast.error("Too many requests. Please try again later.")
             } else {
                 toast.error("Something went wrong. Please try again.")
             }
