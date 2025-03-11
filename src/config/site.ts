@@ -472,7 +472,7 @@ const footerContent = {
     phone: '+1 (555) 123-4567',
     address: '350 Holger Way, San Jose, CA 95134, USA',
   },
-  copyright: '© 2024 Staco Data Solution | All Rights Reserved'
+  copyright: '© 2024 Staco Data Solutions | All Rights Reserved'
 }
 
 export {
