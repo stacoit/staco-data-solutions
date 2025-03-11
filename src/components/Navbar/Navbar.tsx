@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation"
 
 const Navbar = () => {
     const router = useRouter()
-    const pathname = usePathname()
+    const pathname:any = usePathname()
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const sideDrawerRef = useRef<HTMLDivElement>(null)
