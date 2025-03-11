@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoadingStore } from '@/store/loading-store';
 import Image from 'next/image';
-import sdsLogo from '../../../public/sds_logo.svg';
+import sdsLogo from '../../../public/staco_main_logo.svg';
 
 const LOADER_DURATION = 1000; // 1 second for smoother transition
 

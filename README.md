@@ -1,7 +1,7 @@
 # 🚀 Staco Data Solutions
 
 <div align="center">
-  <img src="public/images/sds_logo.png" alt="Staco Data Solutions Logo" width="200"/>
+  <img src="/staco_main_logo.svg" alt="Staco Data Solutions Logo" width="200"/>
   <h3>Transforming Data into Business Intelligence</h3>
 </div>
 
