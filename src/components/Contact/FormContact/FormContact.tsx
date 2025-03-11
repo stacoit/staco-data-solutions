@@ -1,8 +1,9 @@
 "use client"
 
 import type React from "react"
-
 import { useState, type FormEvent } from "react"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import styles from "./FormContact.module.css"
 import { useGSAPAnimation } from "@/hooks/useGSAP"
 
@@ -26,7 +27,6 @@ export default function FormContact() {
             [name]: value,
         }))
 
-        // Clear error when user starts typing
         if (errors[name as keyof typeof errors]) {
             setErrors((prev) => ({
                 ...prev,
@@ -38,7 +38,7 @@ export default function FormContact() {
     const validateForm = () => {
         const newErrors = {
             name: formData.name.trim() === "",
-            email: !/^\S+@\S+\.\S+$/.test(formData.email),
+            email: !/\b\S+@\S+\.\S+$/.test(formData.email),
             message: formData.message.trim() === "",
         }
 
@@ -55,42 +55,29 @@ export default function FormContact() {
 
         setIsSubmitting(true)
 
-        // Simulate form submission
         try {
-            // Replace with actual API call
-            await new Promise((resolve) => setTimeout(resolve, 1000))
-
-            // Reset form after successful submission
-            setFormData({
-                name: "",
-                email: "",
-                message: "",
+            const response = await fetch("https://stacodatasolutions.com/api/v1/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
             })
 
-            alert("Form submitted successfully!")
+            if (response.ok) {
+                setFormData({
+                    name: "",
+                    email: "",
+                    message: "",
+                })
+                toast.success("Form submitted successfully!")
+            } else if (response.status === 400) {
+                toast.error("Invalid inputs. Please check your information.")
+            } else {
+                toast.error("Something went wrong. Please try again.")
+            }
         } catch (error) {
-            alert("Something went wrong. Please try again.")
-        } finally {
-            setIsSubmitting(false)
-        }
-    };
-
-    const handleFormSubmit = async (e: FormEvent) => {
-        e.preventDefault()
-        if (!validateForm()) {
-            return
-        }
-        setIsSubmitting(true)
-        try {
-            await new Promise((resolve) => setTimeout(resolve, 1000))
-            setFormData({
-                name: "",
-                email: "",
-                message: "",
-            })
-            alert("Form submitted successfully!")
-        } catch (error) {
-            alert("Something went wrong. Please try again.")
+            toast.error("Network error. Please try again later.")
         } finally {
             setIsSubmitting(false)
         }
@@ -101,6 +88,7 @@ export default function FormContact() {
 
     return (
         <main className={styles.container}>
+            <ToastContainer />
             <div className={styles.leftSection}>
                 <div className={styles.leftContent}>
                     <h1 className={styles.title}>Start the Conversation</h1>
@@ -166,4 +154,3 @@ export default function FormContact() {
         </main>
     )
 }
-
