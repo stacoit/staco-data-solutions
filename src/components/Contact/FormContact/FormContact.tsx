@@ -56,7 +56,7 @@ export default function FormContact() {
         setIsSubmitting(true)
 
         try {
-            const response: any = await fetch("https://stacodatasolutions.com/api/v1/contact", {
+            const response: any = await fetch("/api/v1/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
