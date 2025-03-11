@@ -62,6 +62,8 @@ const Navbar = () => {
     const closeSideDrawer = () => {
         setIsOpen(false)
     };
+    // <span className={styles.brandText}>Staco Data Solutions</span>
+
 
     return (
         <motion.nav
@@ -73,14 +75,13 @@ const Navbar = () => {
             <div>
                 <Link href="/" className={styles.brand}>
                     <Image
-                        src="/images/sds_logo.png"
+                        src="/images/staco_logo.svg"
                         alt="Staco Data Solutions Logo"
-                        width={32}
-                        height={32}
+                        width={200}
+                        height={85}
                         priority
                         className={styles.logo}
                     />
-                    <span className={styles.brandText}>Staco Data Solutions</span>
                 </Link>
             </div>
 

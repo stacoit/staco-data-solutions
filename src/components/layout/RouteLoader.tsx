@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoadingStore } from '@/store/loading-store';
+import Image from 'next/image';
+import sdsLogo from '../../../public/sds_logo.svg';
 
-const LOADER_DURATION = 750; // 750ms = 0.75 seconds
+const LOADER_DURATION = 1000; // 1 second for smoother transition
 
 const RouteLoader = () => {
   const pathname = usePathname();
@@ -17,9 +19,7 @@ const RouteLoader = () => {
       setIsLoading(false);
     }, LOADER_DURATION);
 
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
   }, [pathname, setIsLoading]);
 
   return (
@@ -29,90 +29,30 @@ const RouteLoader = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.5 }}
           className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90"
         >
-          <div className="relative">
-            <motion.div 
-              className="w-24 h-24 relative"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 0.75, ease: "linear", repeat: Infinity }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/50 to-primary 
-                    clip-path-hexagon animate-pulse filter blur-[2px]" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/50 to-primary 
-                    clip-path-hexagon animate-glitch" />
-                  
-                  <motion.div
-                    className="absolute inset-0 border-2 border-primary/30 clip-path-hexagon"
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 0.75, ease: "linear", repeat: Infinity }}
-                  />
-                </div>
-              </div>
-            </motion.div>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.6, ease: 'easeInOut' }}
+            className="relative flex items-center justify-center"
+          >
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: 'linear' }}
+              className="absolute w-24 h-24 border-4 border-primary/30 rounded-full"
+            />
 
             <motion.div
-              className="absolute inset-0 bg-primary/20 clip-path-hexagon mix-blend-overlay"
-              animate={{ 
-                x: [-2, 2, -2],
-                y: [2, -2, 2],
-              }}
-              transition={{ 
-                duration: 0.2,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
+              animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.2, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+              className="absolute w-32 h-32 bg-primary/20 rounded-full"
             />
-            
-            <motion.div
-              className="absolute inset-0 m-auto w-4 h-4 bg-primary rounded-full"
-              animate={{ 
-                scale: [1, 1.5, 1],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{ 
-                duration: 0.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
 
-          <style jsx global>{`
-            @keyframes glitch {
-              0% {
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                transform: scale(1);
-              }
-              25% {
-                clip-path: polygon(49% -1%, 101% 24%, 101% 76%, 51% 101%, -1% 76%, -1% 24%);
-                transform: scale(1.01);
-              }
-              50% {
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                transform: scale(1);
-              }
-              75% {
-                clip-path: polygon(51% 1%, 99% 26%, 99% 74%, 49% 99%, 1% 74%, 1% 26%);
-                transform: scale(0.99);
-              }
-              100% {
-                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-                transform: scale(1);
-              }
-            }
-
-            .clip-path-hexagon {
-              clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-            }
-
-            .animate-glitch {
-              animation: glitch 0.3s ease infinite;
-            }
-          `}</style>
+            <Image src={sdsLogo} alt="SDS Logo" width={96} height={96} className="relative w-24 h-24" />
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
