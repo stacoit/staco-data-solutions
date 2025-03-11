@@ -56,13 +56,15 @@ export default function FormContact() {
         setIsSubmitting(true)
 
         try {
-            const response = await fetch("https://stacodatasolutions.com/api/v1/contact", {
+            const response: any = await fetch("https://stacodatasolutions.com/api/v1/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(formData),
             })
+
+            const data = await response.json()
 
             if (response.ok) {
                 setFormData({
@@ -74,7 +76,7 @@ export default function FormContact() {
             } else if (response.status === 400) {
                 toast.error("Invalid inputs. Please check your information.")
             } else if (response.status === 429) {
-                toast.error("Too many requests. Please try again later.")
+                toast.error(data.error)
             } else {
                 toast.error("Something went wrong. Please try again.")
             }
