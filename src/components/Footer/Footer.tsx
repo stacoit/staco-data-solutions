@@ -43,7 +43,7 @@ export default function Footer() {
                     <div className={styles.contact}>
                         <h4>{footer.contactUs.title}</h4>
                         <p>Email: {footer.contactUs.email}</p>
-                        <p>Phone: {footer.contactUs.phone}</p>
+                        {/* <p>Phone: {footer.contactUs.phone}</p> */}
                         <p>Address: {footer.contactUs.address}</p>
                     </div>
                 </div>

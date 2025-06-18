@@ -4,14 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --primary: #0056D2;
-  --background: #F9FAFB;
+  --primary: #0056d2;
+  --primary-light: #1e6ef7;
+  --primary-dark: #003d9a;
+  --primary-ultra-light: #e6f2ff;
+  --primary-soft: #f0f7ff;
   --text: #F9FAFB;
   --paragraph: #3C404399;
   --footer: #FFFFFF99;
-  --description: #3C4043; 
+  --description: #3C4043;
+  --background: #F9FAFB;
+  --background-soft: #fafbff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --white: #F9FAFB;
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --shadow-blue: rgba(37, 99, 235, 0.08);
+  --shadow-blue-medium: rgba(37, 99, 235, 0.12);
+  --shadow-blue-heavy: rgba(37, 99, 235, 0.16);
+  --shadow-premium: rgba(15, 23, 42, 0.04);
+  --shadow-premium-medium: rgba(15, 23, 42, 0.08);
+  --shadow-premium-heavy: rgba(15, 23, 42, 0.12);
 }
+
 
 * {
   box-sizing: border-box;
@@ -38,12 +60,17 @@ body {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-[#F9FAFB] text-[#3C4043] font-inter;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-jakarta text-[#0056D2] font-bold;
   }
 }
@@ -72,6 +99,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -83,6 +111,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -93,6 +122,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

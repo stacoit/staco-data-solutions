@@ -21,9 +21,9 @@ export default function MapContainer() {
                         <p className={styles.contactLine}>
                             <span className={styles.contactLabel}>Email:</span> info@stacodatasolutions.com
                         </p>
-                        <p className={styles.contactLine}>
+                        {/* <p className={styles.contactLine}>
                             <span className={styles.contactLabel}>Phone:</span> +1 (555) 123-4567
-                        </p>
+                        </p> */}
                     </div>
                 </div>
                 <div className={styles.mapContainer}>

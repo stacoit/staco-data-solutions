@@ -428,6 +428,11 @@ const footerContent = {
         id: 4,
         name: 'Contact',
         href: '/contact'
+      },
+      {
+        id: 5,
+        name: 'Refund Policy',
+        href: '/refundpolicy'
       }
     ]
   },
@@ -469,7 +474,7 @@ const footerContent = {
   contactUs: {
     title: 'Contact  with us',
     email: 'info@stacodatasolutions.com',
-    phone: '+1 (555) 123-4567',
+    // phone: '+1 (555) 123-4567',
     address: '350 Holger Way, San Jose, CA 95134, USA',
   },
   copyright: '© 2016 Staco Data Solutions | All Rights Reserved'
